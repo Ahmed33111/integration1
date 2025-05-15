@@ -1,0 +1,46 @@
+package com.integrated.adapter;
+
+/**
+ * Classe adaptateur pour faciliter la communication entre les composants 
+ * potentiellement incompatibles des deux projets.
+ */
+public class ComponentAdapter {
+    
+    /**
+     * Adapte une donnée du format javaa55 au format user
+     */
+    public static Object adaptJavaa55ToUser(Object javaa55Data) {
+        // Implémentez ici la logique d'adaptation de javaa55 vers user
+        // Par exemple, convertir un format de données en un autre
+        
+        return transformData(javaa55Data, "javaa55-to-user");
+    }
+    
+    /**
+     * Adapte une donnée du format user au format javaa55
+     */
+    public static Object adaptUserToJavaa55(Object userData) {
+        // Implémentez ici la logique d'adaptation de user vers javaa55
+        // Par exemple, convertir un format de données en un autre
+        
+        return transformData(userData, "user-to-javaa55");
+    }
+    
+    /**
+     * Méthode utilitaire pour transformer les données
+     */
+    private static Object transformData(Object data, String direction) {
+        System.out.println("Transformation des données (" + direction + ")...");
+        
+        // Logique de transformation simplifiée - à adapter selon les besoins réels
+        if (data == null) {
+            return null;
+        }
+        
+        // Exemple de transformation (à remplacer par la logique réelle)
+        // Ici, on simule juste une transformation en retournant l'objet original
+        
+        System.out.println("Transformation terminée.");
+        return data; // Remplacer par la vraie transformation
+    }
+}
