@@ -1,0 +1,261 @@
+/* Styles pour les icônes FontAwesome */
+
+/* Classe de base pour les icônes */
+.font-awesome-icon {
+    -fx-font-family: 'Font Awesome 5 Free';
+    -fx-font-weight: 900; /* Solid */
+    -fx-text-fill: -fx-text-background-color;
+}
+
+/* Tailles d'icônes prédéfinies */
+.font-awesome-sm {
+    -fx-font-size: 0.75em;
+}
+
+.font-awesome-lg {
+    -fx-font-size: 1.5em;
+}
+
+.font-awesome-xl {
+    -fx-font-size: 2.0em;
+}
+
+.font-awesome-xxl {
+    -fx-font-size: 3.0em;
+}
+
+/* Icônes dans les boutons */
+.button .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.button:hover .font-awesome-icon {
+    -fx-text-fill: -fx-text-hover-color;
+}
+
+.button:pressed .font-awesome-icon {
+    -fx-text-fill: -fx-text-pressed-color;
+}
+
+.button:disabled .font-awesome-icon {
+    -fx-opacity: 0.6;
+}
+
+/* Icônes dans les labels */
+.label .font-awesome-icon {
+    -fx-text-fill: inherit;
+}
+
+/* Icônes dans les menus */
+.menu-item .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.menu-item:disabled .font-awesome-icon {
+    -fx-opacity: 0.6;
+}
+
+/* Icônes dans les onglets */
+.tab .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.tab:selected .font-awesome-icon {
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Icônes dans les barres d'outils */
+.tool-bar .button .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.tool-bar .button:hover .font-awesome-icon {
+    -fx-text-fill: -fx-accent;
+}
+
+/* Icônes dans les barres de menus */
+.menu-bar .menu .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.menu-bar .menu:hover .font-awesome-icon {
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Icônes dans les tableaux */
+.table-view .table-cell .font-awesome-icon {
+    -fx-text-fill: -fx-text-background-color;
+}
+
+/* Icônes dans les champs de texte */
+.text-field .font-awesome-icon {
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+/* Icônes dans les zones de texte */
+.text-area .font-awesome-icon {
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+/* Icônes dans les arborescences */
+.tree-view .tree-cell .font-awesome-icon {
+    -fx-text-fill: -fx-text-background-color;
+}
+
+/* Icônes dans les listes */
+.list-view .list-cell .font-awesome-icon {
+    -fx-text-fill: -fx-text-background-color;
+}
+
+/* Icônes dans les onglets de bas de page */
+.tab-pane.bottom .tab .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.tab-pane.bottom .tab:selected .font-awesome-icon {
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Icônes dans les barres de défilement */
+.scroll-bar .increment-button .font-awesome-icon,
+.scroll-bar .decrement-button .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+/* Icônes dans les barres de séparation */
+.split-pane-divider .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+/* Icônes dans les barres de progression */
+.progress-bar .track .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+/* Icônes dans les cases à cocher */
+.check-box .box .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.check-box:selected .box .font-awesome-icon {
+    -fx-text-fill: -fx-accent;
+}
+
+/* Icônes dans les boutons radio */
+.radio-button .radio .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.radio-button:selected .radio .font-awesome-icon {
+    -fx-text-fill: -fx-accent;
+}
+
+/* Icônes dans les barres d'onglets */
+.tab-header-background .tab .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.tab-header-background .tab:selected .font-awesome-icon {
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Icônes dans les barres d'outils contextuelles */
+.context-menu .menu-item .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.context-menu .menu-item:hover .font-awesome-icon {
+    -fx-text-fill: -fx-selection-bar-text;
+}
+
+/* Icônes dans les barres de statut */
+.status-bar .label .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+/* Icônes dans les barres de titre */
+.title-bar .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+/* Icônes dans les barres d'outils flottantes */
+.tool-bar.floating .button .font-awesome-icon {
+    -fx-text-fill: -fx-text-base-color;
+}
+
+.tool-bar.floating .button:hover .font-awesome-icon {
+    -fx-text-fill: -fx-accent;
+}
+
+/* Icônes dans les barres latérales */
+.sidebar .button .font-awesome-icon {
+    -fx-text-fill: white;
+}
+
+.sidebar .button:hover .font-awesome-icon {
+    -fx-text-fill: #a5d8ff;
+}
+
+.sidebar .button.active .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les cartes */
+.card .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les en-têtes */
+.header .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les pieds de page */
+.footer .font-awesome-icon {
+    -fx-text-fill: #6b7280;
+}
+
+/* Icônes dans les barres de navigation */
+.nav-bar .font-awesome-icon {
+    -fx-text-fill: #6b7280;
+}
+
+.nav-bar .button:hover .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les barres d'outils de formulaire */
+.form-toolbar .button .font-awesome-icon {
+    -fx-text-fill: #6b7280;
+}
+
+.form-toolbar .button:hover .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les barres d'outils d'édition */
+.editor-toolbar .button .font-awesome-icon {
+    -fx-text-fill: #6b7280;
+}
+
+.editor-toolbar .button:hover .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les barres d'outils de formatage */
+.format-toolbar .button .font-awesome-icon {
+    -fx-text-fill: #6b7280;
+}
+
+.format-toolbar .button:hover .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}
+
+/* Icônes dans les barres d'outils d'insertion */
+.insert-toolbar .button .font-awesome-icon {
+    -fx-text-fill: #6b7280;
+}
+
+.insert-toolbar .button:hover .font-awesome-icon {
+    -fx-text-fill: #3b82f6;
+}

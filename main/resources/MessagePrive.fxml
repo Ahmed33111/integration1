@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefWidth="1000.0" stylesheets="@styles/chat.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MessagePriveController">
+    <top>
+        <ToolBar styleClass="tool-bar">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Button fx:id="backButton" onAction="#handleBack" styleClass="back-button" text="Retour" />
+                <Label styleClass="title-label" text="Messagerie privée" />
+                <Label fx:id="reclamationLabel" styleClass="reclamation-label" text="" />
+            </HBox>
+        </ToolBar>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.3">
+            <!-- Liste des utilisateurs -->
+            <VBox spacing="10" styleClass="user-list-pane">
+                <Label styleClass="section-label" text="Utilisateurs" />
+                <ListView fx:id="usersListView" styleClass="user-list" VBox.vgrow="ALWAYS" />
+            </VBox>
+
+            <!-- Zone de conversation -->
+            <VBox spacing="10" styleClass="chat-pane" VBox.vgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label fx:id="recipientLabel" styleClass="recipient-label" text="Sélectionnez un utilisateur" />
+                </HBox>
+
+                <!-- Messages -->
+                <ListView fx:id="messagesListView" styleClass="message-list" VBox.vgrow="ALWAYS" />
+
+                <!-- Zone d'envoi -->
+                <VBox spacing="5">
+                    <TextArea fx:id="messageArea" promptText="Tapez votre message ici..." styleClass="message-input" wrapText="true" />
+                    <HBox alignment="CENTER_RIGHT" spacing="10">
+                        <Button fx:id="sendButton" onAction="#sendMessage" styleClass="send-button" text="Envoyer" />
+                    </HBox>
+                </VBox>
+            </VBox>
+        </SplitPane>
+    </center>
+</BorderPane>

@@ -1,0 +1,193 @@
+/* Root styles */
+.root {
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+    -fx-background-color: #f0f2f5;
+}
+
+/* Toolbar styling */
+.tool-bar {
+    -fx-background-color: #ffffff;
+    -fx-padding: 12px 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+/* Back button styling */
+.back-button {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: #374151;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s;
+}
+
+.back-button:hover {
+    -fx-background-color: #d1d5db;
+}
+
+.back-button:pressed {
+    -fx-background-color: #b0b7c1;
+    -fx-translate-y: 1px;
+}
+
+/* Title label for "Messagerie privée" */
+.title-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* Reclamation label styling */
+.reclamation-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #6b7280;
+    -fx-padding: 0 0 0 10px;
+}
+
+/* User list pane styling */
+.user-list-pane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 15px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 3);
+}
+
+/* Section label for "Utilisateurs" */
+.section-label {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #374151;
+    -fx-padding: 0 0 8px 0;
+}
+
+/* User list styling */
+.user-list {
+    -fx-background-color: #fafafa;
+    -fx-border-color: #e5e7eb;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+}
+
+.user-list .list-cell {
+    -fx-padding: 12px 15px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #374151;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.user-list .list-cell:hover {
+    -fx-background-color: #f1f3f5;
+}
+
+.user-list .list-cell:selected {
+    -fx-background-color: #dbeafe;
+    -fx-text-fill: #1e40af;
+}
+
+/* Chat pane styling */
+.chat-pane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, 0, 3);
+}
+
+/* Recipient label styling */
+.recipient-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* Message list styling */
+.message-list {
+    -fx-background-color: #f9fafb;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1px;
+}
+
+.message-list .list-cell {
+    -fx-padding: 8px 12px;
+    -fx-background-color: transparent;
+    -fx-alignment: center;
+}
+
+/* Message bubble styling */
+.message-bubble {
+    -fx-padding: 10px 15px;
+    -fx-background-radius: 15px;
+    -fx-wrap-text: true;
+    -fx-font-size: 14px;
+    -fx-min-width: 200px; /* Minimum width to ensure content visibility */
+}
+
+.message-bubble.sent {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: #ffffff;
+}
+
+.message-bubble.received {
+    -fx-background-color: #e5e7eb;
+    -fx-text-fill: #1e293b;
+}
+
+/* Message input (TextArea) styling */
+.message-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d1d5db;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1.5px;
+    -fx-padding: 12px;
+    -fx-font-size: 14px;
+    -fx-pref-height: 80px;
+    -fx-max-height: 120px;
+    -fx-text-fill: #1e293b;
+}
+
+.message-input:focused {
+    -fx-border-color: #3b82f6;
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.3), 8, 0, 0, 0);
+}
+
+.message-input .prompt-text {
+    -fx-text-fill: #9ca3af;
+}
+
+/* Send button styling */
+.send-button {
+    -fx-background-color: #3b82f6;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 12px 24px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 6, 0, 0, 2);
+    -fx-transition: all 0.2s;
+}
+
+.send-button:hover {
+    -fx-background-color: #2563eb;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 3);
+}
+
+.send-button:pressed {
+    -fx-background-color: #1d4ed8;
+    -fx-translate-y: 1px;
+}
+
+/* SplitPane divider styling */
+.split-pane-divider {
+    -fx-background-color: #d1d5db;
+    -fx-padding: 3px;
+}
+
+/* General transitions for smooth interactions */
+.list-cell, .send-button, .back-button, .message-input {
+    -fx-transition: -fx-background-color 0.2s, -fx-border-color 0.2s, -fx-effect 0.2s, -fx-translate-y 0.2s;
+}

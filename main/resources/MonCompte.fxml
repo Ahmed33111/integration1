@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1000.0" spacing="20" stylesheets="@styles.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="controllers.MonCompteController">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <!-- Main card container -->
+    <VBox styleClass="card" spacing="20" alignment="CENTER" maxWidth="600.0">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <!-- Title -->
+        <Label styleClass="title-label" text="Mon Compte" />
+
+        <!-- Personal Information Section -->
+        <VBox spacing="15" alignment="TOP_LEFT" maxWidth="Infinity">
+            <Label styleClass="subtitle" text="Informations Personnelles" />
+            <GridPane hgap="15" vgap="12">
+                <Label styleClass="input-label" text="Nom:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="nomField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label styleClass="input-label" text="Prénom:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="prenomField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label styleClass="input-label" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="emailLabel" styleClass="input-label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="30.0" />
+                    <ColumnConstraints percentWidth="70.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
+        </VBox>
+
+        <!-- Password Change Section -->
+        <VBox spacing="15" alignment="TOP_LEFT" maxWidth="Infinity">
+            <Label styleClass="subtitle" text="Modifier le Mot de Passe" />
+            <GridPane hgap="15" vgap="12">
+                <Label styleClass="input-label" text="Ancien mot de passe:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <PasswordField fx:id="oldPasswordField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                <Label styleClass="input-label" text="Nouveau mot de passe:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <PasswordField fx:id="newPasswordField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label styleClass="input-label" text="Confirmer mot de passe:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <PasswordField fx:id="confirmPasswordField" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="30.0" />
+                    <ColumnConstraints percentWidth="70.0" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints />
+                    <RowConstraints />
+                    <RowConstraints />
+                </rowConstraints>
+            </GridPane>
+        </VBox>
+
+        <!-- Message Label -->
+        <Label fx:id="messageLabel" styleClass="message-label" />
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button styleClass="primary-button" onAction="#handleSave" text="Enregistrer" />
+            <Button styleClass="secondary-button" onAction="#handleBack" text="Retour" />
+        </HBox>
+    </VBox>
+</VBox>

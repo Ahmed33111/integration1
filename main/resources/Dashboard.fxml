@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+
+<?import javafx.scene.control.ScrollPane?>
+<BorderPane fx:id="root" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+    <!-- Sidebar -->
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="80.0" minWidth="80.0" maxWidth="80.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER" spacing="30.0" styleClass="sidebar-content" VBox.vgrow="ALWAYS">
+                <!-- Logo -->
+                <VBox alignment="CENTER" spacing="5.0" styleClass="logo-container">
+                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@/images/logo.png" />
+                        </image>
+                    </ImageView>
+                </VBox>
+
+                <!-- Navigation Buttons -->
+                <VBox alignment="CENTER" spacing="30.0" styleClass="nav-buttons">
+                    <Button styleClass="sidebar-button active" onAction="#showDashboard" prefWidth="50.0" prefHeight="50.0">
+                        <graphic>
+                            <FontAwesomeIconView glyphName="HOME" size="1.5em" />
+                        </graphic>
+                    </Button>
+
+                    <Button styleClass="sidebar-button" onAction="#showHousing" prefWidth="50.0" prefHeight="50.0">
+                        <graphic>
+                            <FontAwesomeIconView glyphName="BUILDING" size="1.5em" />
+                        </graphic>
+                    </Button>
+
+                    <Button styleClass="sidebar-button" onAction="#showEvents" prefWidth="50.0" prefHeight="50.0">
+                        <graphic>
+                            <FontAwesomeIconView glyphName="CALENDAR_ALT" size="1.5em" />
+                        </graphic>
+                    </Button>
+
+                    <Button styleClass="sidebar-button" onAction="#showComplaints" prefWidth="50.0" prefHeight="50.0">
+                        <graphic>
+                            <FontAwesomeIconView glyphName="COMMENT_ALT" size="1.5em" />
+                        </graphic>
+                    </Button>
+                </VBox>
+
+                <VBox fx:id="bottomButtons" alignment="CENTER" spacing="30.0">
+                    <Button styleClass="sidebar-button" onAction="#showSettings" prefWidth="50.0" prefHeight="50.0">
+                        <graphic>
+                            <FontAwesomeIconView glyphName="COG" size="1.5em" />
+                        </graphic>
+                    </Button>
+
+                    <Button styleClass="sidebar-button" onAction="#logout" prefWidth="50.0" prefHeight="50.0">
+                        <graphic>
+                            <FontAwesomeIconView glyphName="SIGN_OUT_ALT" size="1.5em" />
+                        </graphic>
+                    </Button>
+                </VBox>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- Main Content -->
+    <center>
+        <VBox styleClass="main-content" BorderPane.alignment="CENTER" VBox.vgrow="ALWAYS">
+            <!-- Header -->
+            <HBox styleClass="header" alignment="CENTER_LEFT" spacing="20.0" prefHeight="60.0">
+                <padding>
+                    <Insets left="20.0" right="20.0" top="10.0" bottom="10.0" />
+                </padding>
+                <VBox alignment="CENTER_LEFT" spacing="5.0">
+                    <Label styleClass="header-title" text="Tableau de bord" />
+                    <Label styleClass="header-subtitle" text="Bienvenue sur votre espace personnel" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="Nouveau" styleClass="button-primary" onAction="#handleNewAction" prefHeight="40.0" />
+            </HBox>
+
+            <!-- Dashboard Content -->
+            <ScrollPane fitToWidth="true" fitToHeight="true" style="-fx-background: transparent; -fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                <VBox styleClass="dashboard-container" spacing="20.0">
+                    <padding>
+                        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+                    </padding>
+                    <!-- Stats Cards -->
+                    <HBox spacing="20.0" alignment="TOP_CENTER">
+                        <VBox styleClass="dashboard-card" alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS" prefHeight="100.0">
+                            <Label styleClass="dashboard-card-title" text="Logements" />
+                            <Label styleClass="dashboard-card-value" text="12" />
+                            <Label styleClass="dashboard-card-description" text="+2 ce mois-ci" />
+                        </VBox>
+
+                        <VBox styleClass="dashboard-card" alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS" prefHeight="100.0">
+                            <Label styleClass="dashboard-card-title" text="Événements" />
+                            <Label styleClass="dashboard-card-value" text="5" />
+                            <Label styleClass="dashboard-card-description" text="+1 cette semaine" />
+                        </VBox>
+
+                        <VBox styleClass="dashboard-card" alignment="CENTER" spacing="10.0" HBox.hgrow="ALWAYS" prefHeight="100.0">
+                            <Label styleClass="dashboard-card-title" text="Réclamations" />
+                            <Label styleClass="dashboard-card-value" text="3" />
+                            <Label styleClass="dashboard-card-description" text="En attente" />
+                        </VBox>
+                    </HBox>
+
+                    <!-- Recent Activities -->
+                    <VBox styleClass="card" spacing="15.0">
+                        <Label styleClass="title" text="Activités récentes" />
+                        <Separator />
+                        <VBox spacing="10.0">
+                            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                <FontAwesomeIconView glyphName="CHECK_CIRCLE" style="-fx-fill: #10B981; -fx-font-size: 1.2em;" />
+                                <Label text="Votre demande de logement a été approuvée" styleClass="activity-text" />
+                                <Label text="Il y a 2h" styleClass="activity-time" HBox.hgrow="ALWAYS" />
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                <FontAwesomeIconView glyphName="CALENDAR_ALT" style="-fx-fill: #3B82F6; -fx-font-size: 1.2em;" />
+                                <Label text="Nouvel événement: Réunion des résidents" styleClass="activity-text" />
+                                <Label text="Il y a 1 jour" styleClass="activity-time" HBox.hgrow="ALWAYS" />
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="10.0">
+                                <FontAwesomeIconView glyphName="COMMENT_ALT" style="-fx-fill: #F59E0B; -fx-font-size: 1.2em;" />
+                                <Label text="Nouveau message concernant votre réclamation #123" styleClass="activity-text" />
+                                <Label text="Il y a 3 jours" styleClass="activity-time" HBox.hgrow="ALWAYS" />
+                            </HBox>
+                        </VBox>
+                    </VBox>
+
+                    <!-- Quick Actions -->
+                    <VBox styleClass="card" spacing="15.0">
+                        <Label styleClass="title" text="Actions rapides" />
+                        <Separator />
+                        <GridPane hgap="20.0" vgap="20.0" alignment="CENTER">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33" minWidth="150.0" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33" minWidth="150.0" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="33.33" minWidth="150.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints vgrow="ALWAYS" minHeight="120.0" />
+                            </rowConstraints>
+
+                            <Button styleClass="quick-action-button" onAction="#newHousingRequest" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" prefWidth="150.0" prefHeight="120.0">
+                                <VBox alignment="CENTER" spacing="10.0" styleClass="quick-action-content" prefWidth="150.0" prefHeight="120.0">
+                                    <FontAwesomeIconView glyphName="HOME" size="1.5em" style="-fx-fill: #3B82F6;" />
+                                    <Label text="Demande de logement" styleClass="quick-action-text" alignment="CENTER" />
+                                </VBox>
+                            </Button>
+
+                            <Button styleClass="quick-action-button" onAction="#newEvent" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" prefWidth="150.0" prefHeight="120.0">
+                                <VBox alignment="CENTER" spacing="10.0" styleClass="quick-action-content" prefWidth="150.0" prefHeight="120.0">
+                                    <FontAwesomeIconView glyphName="CALENDAR_PLUS" size="1.5em" style="-fx-fill: #10B981;" />
+                                    <Label text="Créer un événement" styleClass="quick-action-text" alignment="CENTER" />
+                                </VBox>
+                            </Button>
+
+                            <Button styleClass="quick-action-button" onAction="#newComplaint" GridPane.columnIndex="2" GridPane.rowIndex="0" GridPane.halignment="CENTER" GridPane.valignment="CENTER" prefWidth="150.0" prefHeight="120.0">
+                                <VBox alignment="CENTER" spacing="10.0" styleClass="quick-action-content" prefWidth="150.0" prefHeight="120.0">
+                                    <FontAwesomeIconView glyphName="COMMENT_ALT" size="1.5em" style="-fx-fill: #F59E0B;" />
+                                    <Label text="Nouvelle réclamation" styleClass="quick-action-text" alignment="CENTER" />
+                                </VBox>
+                            </Button>
+                        </GridPane>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>
